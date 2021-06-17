@@ -1,0 +1,66 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.check-block{
+    background-color: rgb(73, 143, 122);
+    box-shadow: 0px -5px 5px -5px rgba(56, 112, 95, 0.6) inset;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.check-block--height{
+    padding: 0 20px;
+    height:40px;
+}
+.check-block__interpretation{
+    margin-right: 10px;
+    font-size: 20px;
+}
+.check-block__input{
+    height: 25px;
+    width: 25px;
+}
+.accordion-box{
+    background-color: rgb(89, 173, 148);
+}
+.accordion-box--height{
+    padding: 20px;
+    height: auto;
+}
+.accordion-box__item{
+    margin-top: 20px 
+}
+.active__item .item__content{
+    display: block;
+}
+.active__item .triger__icon{
+    
+}
+.item{
+    background-color: rgb(238, 238, 238);
+}
+.item__triger{
+    padding: 0px 20px;
+    font-size: 28px;
+}
+.triger{
+    background-color: rgb(224, 224, 224);
+    box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.triger__title{
+    margin: 24px;
+}
+.triger__icon{
+    height: 20px;
+    width: 20px;
+}
+.item__content{
+    display:none;
+    padding: 5px;
+    font-size: 20px;
+    height: auto;
+}
