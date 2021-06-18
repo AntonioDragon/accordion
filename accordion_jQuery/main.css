@@ -34,23 +34,30 @@ body{
 .item{
     background-color: rgb(238, 238, 238);
 }
-.item__triger{
+.item__trigger{
     padding: 0px 20px;
     font-size: 28px;
 }
-.triger{
+.trigger{
     background-color: rgb(224, 224, 224);
     box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.triger__title{
+.trigger__title{
     margin: 24px;
 }
-.triger__icon{
+.trigger__icon{
     height: 20px;
     width: 20px;
+    background-size: contain;
+}
+.icon--close{
+    background-image: url('../accordion_jQuery/icons/close.svg') ;
+}
+.icon--open{
+    background-image: url('../accordion_jQuery/icons/open.svg');
 }
 .item__content{
     display:none;

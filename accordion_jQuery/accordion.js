@@ -1,42 +1,51 @@
-var check = $('.check-block__input');
-var accordion_triger = $('.item__triger');
-var accordion_icon = $('.triger__icon');
-var accordion_content = $('.item__content');
+var check_selector = $('.check-block__input');
+var item_selector = $('.item');
 
-var accordion_active = 'active__item';
-
-var src_open ='./icons/open.svg';
-var src_close ='./icons/close.svg';
+var icon_class = '.trigger__icon';
+var content_class = '.item__content';
+var active_class = 'active--item';
+var openIcon_class = 'icon--open';
+var closeIcon_class = 'icon--close';
 
 $(document).ready( () => {
-    $('.active__item').children(accordion_triger).next(accordion_content).slideToggle(200);
-    $('.active__item').children(accordion_triger).children(accordion_icon).attr("src", src_open);
-    
-    $(accordion_triger).on('click', function(){
-        if(check.prop("checked")){
-            parent = $(this).parent();
-            if(parent.hasClass(accordion_active)){
-                parent.removeClass(accordion_active).children(accordion_triger).next(accordion_content).slideToggle(200);
-                parent.children(accordion_triger).children(accordion_icon).attr("src", src_close);
-            }
-            else{
-                parent.addClass(accordion_active).children(accordion_triger).next(accordion_content).slideToggle(200);
-                parent.children(accordion_triger).children(accordion_icon).attr('src', src_open);
+    $('.active--item .item__content').slideToggle(200);
+    $('.active--item .trigger__icon').removeClass(closeIcon_class).addClass(openIcon_class);
+
+    $('.item__trigger').on('click', function(){
+        var trigger = $(this);
+        var item = trigger.closest('.item');
+        var content = item.find('.item__content');
+        var triggerIcon = trigger.find('.trigger__icon');
+
+        if(check_selector.prop("checked")){
+            if(item.hasClass(active_class)){
+                content.slideToggle(200);
+                item.removeClass(active_class);
+                triggerIcon.removeClass(openIcon_class).addClass(closeIcon_class);
+            }else{
+                content.slideToggle(200);
+                item.addClass(active_class);
+                triggerIcon.removeClass(closeIcon_class).addClass(openIcon_class);
             }
         }
         else{
-            accordion_content.not( $(this).next() ).slideUp(200);
-            accordion_content.not( $(this).next() ).prev().children(accordion_icon).attr('src', src_close);
-            $('.accordion-box__item').removeClass(accordion_active);
-            $(this).next().slideDown(200).parent().addClass(accordion_active);
-            $(this).children(accordion_icon).attr('src', src_open);
-        }   
-    })
-
-    check.change( () => { 
-        $('.active__item').children(accordion_triger).next(accordion_content).slideToggle(200);
-        $('.active__item').children(accordion_triger).children(accordion_icon).attr("src", src_close);
-        accordion_triger.parent().removeClass(accordion_active);
+            if(item.hasClass(active_class)){
+                content.slideUp(200);
+                item.removeClass(active_class);
+                triggerIcon.removeClass(openIcon_class).addClass(closeIcon_class);
+            }
+            else{
+                $(content_class).not(content).slideUp(200);
+                $(icon_class).not(triggerIcon).removeClass(openIcon_class).addClass(closeIcon_class);
+                item_selector.removeClass(active_class);
+                content.slideDown(200).parent().addClass(active_class);
+                triggerIcon.removeClass(closeIcon_class).addClass(openIcon_class);
+            }    
+        }
     });
-    
+    check_selector.change( () => { 
+        $('.'+active_class).find(content_class).slideToggle(200);
+        $('.'+active_class).find(icon_class).removeClass(openIcon_class).addClass(closeIcon_class);
+        item_selector.removeClass(active_class);
+    });
 })
