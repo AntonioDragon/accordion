@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet"  href="main.css">
     <title>Accordion</title>
 </head>
 <body>
@@ -13,10 +13,11 @@
         <input class="check-block__input" type="checkbox" name="Accordion option">
     </div>
     <div class="accordion-box accordion-box--height">
-        <div class="accordion-box__item item active__item">
-            <div class="item__triger triger">
-                <p class="triger__title">Accordion №1</p>
-                <img class="triger__icon" src="./icons/open.svg" alt="Open/Close">
+        <div class="accordion-box__item item active--item">
+            <div class="item__trigger trigger">
+                <p class="trigger__title">Accordion №1</p>
+                <span class="trigger__icon icon icon--open"></span>
+                
             </div>
             <div class="item__content">
                 Задача организации, в особенности же постоянное информационно-пропогандистское 
@@ -28,9 +29,9 @@
             </div>
         </div>
         <div class="accordion-box__item item">
-            <div class="item__triger triger">
-                <p class="triger__title">Accordion №2</p>
-                <img class="triger__icon" src="./icons/close.svg" alt="Open/Close">
+            <div class="item__trigger trigger">
+                <p class="trigger__title">Accordion №2</p>
+                <span class="trigger__icon icon icon--close"></span>
             </div>
             <div class="item__content">
                 Задача организации, в особенности же постоянное информационно-пропогандистское 
@@ -42,9 +43,9 @@
             </div>
         </div>
         <div class="accordion-box__item item">
-            <div class="item__triger triger">
-                <p class="triger__title">Accordion №3</p>
-                <img class="triger__icon" src="./icons/close.svg" alt="Open/Close">
+            <div class="item__trigger trigger">
+                <p class="trigger__title">Accordion №3</p>
+                <span class="trigger__icon icon icon--close"></span>
             </div>
             <div class="item__content">
                 Задача организации, в особенности же постоянное информационно-пропогандистское 
@@ -56,6 +57,7 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="crossorigin="anonymous"></script>
     <script src="./accordion.js"></script>
 </body>
 </html>

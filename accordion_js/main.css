@@ -31,36 +31,46 @@ body{
 .accordion-box__item{
     margin-top: 20px 
 }
-.active__item .item__content{
-    display: block;
-}
-.active__item .triger__icon{
-    
-}
+
+
 .item{
     background-color: rgb(238, 238, 238);
 }
-.item__triger{
+.item__trigger{
     padding: 0px 20px;
     font-size: 28px;
 }
-.triger{
+.trigger{
     background-color: rgb(224, 224, 224);
     box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.triger__title{
+.trigger__title{
     margin: 24px;
 }
-.triger__icon{
+.trigger__icon{
     height: 20px;
     width: 20px;
+    background-size: contain;
+}
+.icon--close{
+    background-image: url('../accordion_js/icons/close.svg') ;
+}
+.icon--open{
+    background-image: url('../accordion_js/icons/open.svg');
 }
 .item__content{
-    display:none;
-    padding: 5px;
+    position: relative;
     font-size: 20px;
-    height: auto;
+    padding: 0px;
+    height:0;
+    overflow: hidden;
+    transition-duration: 1s;
+    overflow-y: auto;
+}
+.active--item .item__content{
+    height: 150px;
+    padding: 5px;
 }
